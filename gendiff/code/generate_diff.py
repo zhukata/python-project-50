@@ -1,10 +1,11 @@
-import json, argparse
+import json
+import argparse
 
 
 def parser():
     parser = argparse.ArgumentParser(
         description="Compares two configuration files and shows a difference."
-        )
+    )
     parser.add_argument("first_file")
     parser.add_argument("second_file")
     parser.add_argument("-f", "--format", help="set format of output")
@@ -20,7 +21,7 @@ def generate_diff(files):
 
 
 def get_different(data1, data2):
-    result = [ '{', '\n',]
+    result = ['{', '\n',]
     for key1, value1 in sorted(data1.items()):
         if key1 in data2:
             if data2[key1] == data1[key1]:
@@ -36,7 +37,7 @@ def get_different(data1, data2):
                 result.append(str(key1))
                 result.append(':')
                 result.append(' ')
-                result.append(str(value1))                    
+                result.append(str(value1))
                 result.append('\n')
                 result.append('+')
                 result.append(' ')
@@ -61,6 +62,6 @@ def get_different(data1, data2):
             result.append(':')
             result.append(' ')
             result.append(str(value2))
-            result.append('\n')       
+            result.append('\n')
     result.append('}')
     return ''.join(result)
