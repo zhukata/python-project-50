@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
-from gendiff.code.generate_diff import generate_diff, parser
+from gendiff.parser import parser
+# from gendiff.formaters.stylish import stylish
+# # from gendiff.formaters.plain import plain
+from gendiff.generate_diff import generate_diff
 
 
 def main():
-    generate_diff(parser())
+    return generate_diff(*parser())
 
 
 if __name__ == '__main__':

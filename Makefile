@@ -4,9 +4,6 @@ install:
 uninstall:
 	pip uninstall hexlet-code -y
 
-build:
-	poetry build
-
 publish:
 	poetry publish --dry-run
 
@@ -17,10 +14,10 @@ test:
 	poetry run pytest
 
 test-coverage:
-	poetry run pytest --cov=gediff --cov-report xml
+	poetry run pytest --cov=gendiff --cov-report xml
 
 lint:
-	poetry run flake8 gediff
+	poetry run flake8 gendiff
 
 selfcheck:
 	poetry check

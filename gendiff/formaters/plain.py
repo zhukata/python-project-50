@@ -1,0 +1,2 @@
+def plain(value):
+    pass

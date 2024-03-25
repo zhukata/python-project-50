@@ -3,5 +3,11 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/61a0c44599e1e7318b28/maintainability)](https://codeclimate.com/github/zhukata/python-project-50/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/61a0c44599e1e7318b28/test_coverage)](https://codeclimate.com/github/zhukata/python-project-50/test_coverage)
 
-Gendiff Step 3:
+Gendiff .json:
 [![asciicast](https://asciinema.org/a/646480.svg)](https://asciinema.org/a/646480)
+
+Gendiff .yaml:
+[![asciicast](https://asciinema.org/a/648944.svg)](https://asciinema.org/a/648944)
+
+Gendiff nested structures:
+[![asciicast](https://asciinema.org/a/648946.svg)](https://asciinema.org/a/648946)
