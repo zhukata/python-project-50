@@ -36,6 +36,16 @@ def test_generate_diff_nested(file_name1, file_name2, expected_result):
         assert generate_diff(get_fixture_path(file_name1), get_fixture_path(file_name2)) == file.read()
 
 
+@pytest.mark.parametrize("file_name1, file_name2, expected_result", [
+    ["file1_nested.json", "file2_nested.json", "flat_format.txt"],
+    ["file1_nested.yml", "file2_nested.yaml", "flat_format.txt"],
+    ["file1_nested.yml", "file2_nested.json", "flat_format.txt"]
+])
+def test_generate_diff_flat_format(file_name1, file_name2, expected_result):
+    with open(get_fixture_path(expected_result)) as file:
+        assert generate_diff(get_fixture_path(file_name1), get_fixture_path(file_name2), format_name='plain') == file.read()
+
+
 def test_format():
     with pytest.raises(ValueError) as e:
         generate_diff(get_fixture_path("file1_nested.json"), get_fixture_path("file.txt"))
