@@ -9,5 +9,8 @@ Gendiff .json:
 Gendiff .yaml:
 [![asciicast](https://asciinema.org/a/648944.svg)](https://asciinema.org/a/648944)
 
-Gendiff nested structures:
+Gendiff formater=stylish:
 [![asciicast](https://asciinema.org/a/648946.svg)](https://asciinema.org/a/648946)
+
+Gendiff formater=plain
+[![asciicast](https://asciinema.org/a/649321.svg)](https://asciinema.org/a/649321)
