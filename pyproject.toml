@@ -1,8 +1,8 @@
 [tool.poetry]
 name = "hexlet-code"
 version = "0.1.0"
-description = "gendiff"
-authors = ["Your Name <you@example.com>"]
+description = "Shows the difference between two files, in different formats."
+authors = ["zhukata <https://github.com/zhukata>"]
 readme = "README.md"
 repository = "https://github.com/zhukata/python-project-50.git"
 packages = [
