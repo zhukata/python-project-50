@@ -27,7 +27,10 @@ def read(file_path):
     ["file1_nested.yml", "file2_nested.json", "stylish", "nested.txt"],
     ["file1_nested.json", "file2_nested.json", "plain", "flat_format.txt"],
     ["file1_nested.yml", "file2_nested.yaml", "plain", "flat_format.txt"],
-    ["file1_nested.yml", "file2_nested.json", "plain", "flat_format.txt"]
+    ["file1_nested.yml", "file2_nested.json", "plain", "flat_format.txt"],
+    ["file1_nested.yml", "file2_nested.json", "json_", "file_json.txt"],
+    ["file1_nested.json", "file2_nested.json", "json_", "file_json.txt"],
+    ["file1_nested.yml", "file2_nested.yaml", "json_", "file_json.txt"],
 ])
 def test_generate_diff(file_name1, file_name2, formatter, expected_result):
     """Tests the operation of the function generate_diff.

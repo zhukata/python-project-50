@@ -20,33 +20,32 @@ def stylish(value, replacer=' ', spaces_count=4): # noqa:901
 
         if isinstance(current_value, list):
             for i in current_value:
-                if isinstance(i, dict):
-                    if i['type'] == 'nested':
+                if i['type'] == 'nested':
+                    lines.append(f"{left_shift}  {i['key']}: {iter_(i['value'], depth + DEPTH_STEP)}") # noqa:501
+                elif i['type'] == 'added':
+                    if isinstance(i['value'], dict):
+                        lines.append(f"{left_shift}+ {i['key']}: {iter_(i['value'], depth + DEPTH_STEP)}") # noqa:501
+                    else:
+                        lines.append(f"{left_shift}+ {i['key']}: {to_str(i['value'])}") # noqa:501
+                elif i['type'] == 'removed':
+                    if isinstance(i['value'], dict):
+                        lines.append(f"{left_shift}- {i['key']}: {iter_(i['value'], depth + DEPTH_STEP)}") # noqa:501
+                    else:
+                        lines.append(f"{left_shift}- {i['key']}: {to_str(i['value'])}") # noqa:501
+                elif i['type'] == 'equal':
+                    if isinstance(i['value'], dict):
                         lines.append(f"{left_shift}  {i['key']}: {iter_(i['value'], depth + DEPTH_STEP)}") # noqa:501
-                    elif i['type'] == 'added':
-                        if isinstance(i['value'], dict):
-                            lines.append(f"{left_shift}+ {i['key']}: {iter_(i['value'], depth + DEPTH_STEP)}") # noqa:501
-                        else:
-                            lines.append(f"{left_shift}+ {i['key']}: {to_str(i['value'])}") # noqa:501
-                    elif i['type'] == 'removed':
-                        if isinstance(i['value'], dict):
-                            lines.append(f"{left_shift}- {i['key']}: {iter_(i['value'], depth + DEPTH_STEP)}") # noqa:501
-                        else:
-                            lines.append(f"{left_shift}- {i['key']}: {to_str(i['value'])}") # noqa:501
-                    elif i['type'] == 'equal':
-                        if isinstance(i['value'], dict):
-                            lines.append(f"{left_shift}  {i['key']}: {iter_(i['value'], depth + DEPTH_STEP)}") # noqa:501
-                        else:
-                            lines.append(f"{left_shift}  {i['key']}: {to_str(i['value'])}") # noqa:501
-                    elif i['type'] == 'updated' and check_neighbour_type(i, current_value): # noqa:501
-                        if isinstance(i['value'], dict):
-                            lines.append(f"{left_shift}- {i['key']}: {iter_(i['value'], depth + DEPTH_STEP)}") # noqa:501
-                        else:
-                            lines.append(f"{left_shift}- {i['key']}: {to_str(i['value'])}") # noqa:501
-                        if isinstance(find_neighbour_value(i, current_value), dict): # noqa:501
-                            lines.append(f"{left_shift}+ {iter_(find_neighbour_value(i, current_value), depth + DEPTH_STEP)}") # noqa:501
-                        else:
-                            lines.append(f"{left_shift}+ {i['key']}: {to_str(find_neighbour_value(i, current_value))}") # noqa:501
+                    else:
+                        lines.append(f"{left_shift}  {i['key']}: {to_str(i['value'])}") # noqa:501
+                elif i['type'] == 'updated': # noqa:501
+                    if isinstance(i['value1'], dict):
+                        lines.append(f"{left_shift}- {i['key']}: {iter_(i['value1'], depth + DEPTH_STEP)}") # noqa:501
+                    else:
+                        lines.append(f"{left_shift}- {i['key']}: {to_str(i['value1'])}") # noqa:501
+                    if isinstance(i['value2'], dict): # noqa:501
+                        lines.append(f"{left_shift}+ {i['key']}: {iter_(i['value2'], depth + DEPTH_STEP)}") # noqa:501
+                    else:
+                        lines.append(f"{left_shift}+ {i['key']}: {to_str(i['value2'])}") # noqa:501
         else:
             for k, v in current_value.items():
                 if isinstance(v, dict):

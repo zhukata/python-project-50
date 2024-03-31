@@ -12,5 +12,8 @@ Gendiff .yaml:
 Gendiff formater=stylish:
 [![asciicast](https://asciinema.org/a/648946.svg)](https://asciinema.org/a/648946)
 
-Gendiff formater=plain
+Gendiff formater=plain:
 [![asciicast](https://asciinema.org/a/649321.svg)](https://asciinema.org/a/649321)
+
+Gendiff formater=json_:
+[![asciicast](https://asciinema.org/a/ybgC5efxgVNmm8MumyTEfixDQ.svg)](https://asciinema.org/a/ybgC5efxgVNmm8MumyTEfixDQ)

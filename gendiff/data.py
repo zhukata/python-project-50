@@ -3,6 +3,7 @@ import yaml
 
 from gendiff.formaters.plain import plain
 from gendiff.formaters.stylish import stylish
+from gendiff.formaters.json_formatter import json_
 
 
 def get_data(filepath):
@@ -18,6 +19,8 @@ def get_formatter(name_format):
     """Returns the formatter"""
     if name_format == 'plain':
         return plain
+    elif name_format == 'json_':
+        return json_
     return stylish
 
 

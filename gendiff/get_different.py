@@ -37,11 +37,7 @@ def get_different(data1, data2):
             list_diff.append({
                 "key": key,
                 "type": 'updated',
-                "value": data1[key],
-            })
-            list_diff.append({
-                "key": key,
-                "type": 'updated',
-                "value": data2[key]
+                "value1": data1[key],
+                "value2": data2[key],
             })
     return list_diff
