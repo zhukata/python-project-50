@@ -36,12 +36,19 @@ def test_generate_diff(file_name1, file_name2, formatter, expected_result):
     """Tests the operation of the function generate_diff.
     Accepts different file paths and formatters"""
     with open(get_fixture_path(expected_result)) as file:
-        assert generate_diff(get_fixture_path(file_name1), get_fixture_path(file_name2), formatter) == file.read()
+        assert generate_diff(
+            get_fixture_path(file_name1),
+            get_fixture_path(file_name2),
+            formatter
+        ) == file.read()
 
 
 def test_wrong_format():
     """Tests for unsupported format error."""
     with pytest.raises(ValueError) as e:
-        generate_diff(get_fixture_path("file1_nested.json"), get_fixture_path("file.txt"))
+        generate_diff(
+            get_fixture_path("file1_nested.json"),
+            get_fixture_path("file.txt"),
+        )
 
     assert str(e.value) == 'unsupported file format'
