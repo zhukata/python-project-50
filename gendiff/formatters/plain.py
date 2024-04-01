@@ -1,4 +1,4 @@
-def plain(data): # noqa:901
+def make_plain(data): # noqa:901
     """Formatter function. Shows flat format.
     Returns a string.
     """

@@ -1,5 +1,6 @@
-from gendiff.data import get_data, get_formatter
-from gendiff.get_different import get_different
+from gendiff.data import get_data
+from gendiff.formatters import get_formatter
+from gendiff.differ import get_different
 
 
 def generate_diff(file_path1, file_path2, format_name='stylish'):
